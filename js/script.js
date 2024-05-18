@@ -61,11 +61,11 @@ const changeSlide = (index) => {
 	}
 };
 
-prev.addEventListener('click', function () {
+prev.addEventListener('click', () => {
 	currentIndex -= 1;
 	changeSlide(currentIndex);
 });
-next.addEventListener('click', function () {
+next.addEventListener('click', () => {
 	currentIndex += 1;
 	changeSlide(currentIndex);
 });
