@@ -5,6 +5,7 @@ const slides = [
         time: '3.5 months',
         cost: 'Upon request',
         img: 'img/admiral.jpg',
+		alt: 'Rostov-on-Don LCD admiral',
 	},
 	{
 		city: 'Sochi<br>Thieves',
@@ -12,6 +13,7 @@ const slides = [
         time: '4 months',
         cost: 'Upon request',
         img: 'img/sochi.jpg',
+		alt: 'Sochi Thieves',
 	},
 	{
 		city: 'Rostov-on-Don<br>Patriotic',
@@ -19,6 +21,7 @@ const slides = [
         time: '3 months',
         cost: 'Upon request',
         img: 'img/patriotic.jpg',
+		alt: 'Rostov-on-Don Patriotic',
 	},
 ];
 
@@ -38,13 +41,17 @@ const next = document.querySelector('.controlls__next');
 
 let currentIndex = 0;
 const changeSlide = (index) => {
+	headCityName.forEach(item => item.classList.remove('slider-head__item_active'));
+	dots.forEach(item => item.classList.remove('dot_active'));
 	if (index >= 0 && index <= slides.length - 1) {
 		cityElem.innerHTML = slides[index].city;
 		areaElem.innerHTML = slides[index].area;
 		timeElem.innerHTML = slides[index].time;
 		costElem.innerHTML = slides[index].cost;
 		imgElem.src = `${slides[index].img}`;
-		
+		imgElem.alt = slides[index].alt;
+		headCityName[index].classList.add('slider-head__item_active');
+		dots[index].classList.add('dot_active');
 	} else if (index < 0) {
 		currentIndex = slides.length - 1;
 		changeSlide(currentIndex);
@@ -61,4 +68,16 @@ prev.addEventListener('click', function () {
 next.addEventListener('click', function () {
 	currentIndex += 1;
 	changeSlide(currentIndex);
+});
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        changeSlide(index);
+        currentIndex = index;
+    });
+});
+headCityName.forEach((name, index) => {
+	name.addEventListener('click', () => {
+        changeSlide(index);
+        currentIndex = index;
+    });
 });

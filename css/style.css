@@ -142,9 +142,9 @@ body {
 }
 .dot_active:hover {
 	opacity: 1;
-  }
-.controlls__next {
 }
+
 .controlls__arrow {
 	cursor: pointer;
+	padding: 5px;
 }
