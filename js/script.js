@@ -49,7 +49,7 @@ const changeSlide = (index) => {
 		timeElem.innerHTML = slides[index].time;
 		costElem.innerHTML = slides[index].cost;
 		imgElem.src = `${slides[index].img}`;
-		imgElem.alt = slides[index].alt;
+		imgElem.alt = `${slides[index].alt}`;
 		headCityName[index].classList.add('slider-head__item_active');
 		dots[index].classList.add('dot_active');
 	} else if (index < 0) {

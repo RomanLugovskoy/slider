@@ -120,15 +120,20 @@ body {
 }
 .info__controlls {
 	display: flex;
+	justify-content: left;
+	align-items: center;
 	gap: 30px;
 	margin-top: auto;
 }
 
-.controlls__dotts {
+.controlls__dots {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	gap: 17px;
 }
 .controlls-dot {
+	width: 10px;
 	opacity: .3;
 	cursor: pointer;
 }
@@ -145,5 +150,6 @@ body {
 
 .controlls__arrow {
 	cursor: pointer;
+	width: 40px;
 	padding: 5px;
 }
